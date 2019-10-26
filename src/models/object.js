@@ -27,8 +27,11 @@ const objectSchema = new mongoose.Schema({
 	x4: {
     	type: Number,
 		required: true
+	},
+	// TODO: Figure out if there is a better way than simply using the IDs to fetch objects everytime
+	nearbyObjects: {
+    	type: [mongoose.Schema.Types.ObjectId]
 	}
-	// TODO: Add a field for storing the nearest objects
 });
 
 const Object = mongoose.model('Object', objectSchema);

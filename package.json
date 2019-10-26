@@ -19,10 +19,12 @@
   },
   "homepage": "https://github.com/ashryaagr/Bengalathon_Backend#readme",
   "dependencies": {
+    "actions-on-google": "^2.12.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
+    "firebase-functions": "^3.3.0",
     "mongodb": "^3.3.3",
     "mongoose": "^5.7.7",
     "passport": "^0.4.0",
