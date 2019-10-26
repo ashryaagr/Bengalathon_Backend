@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const objectSchema = new mongoose.Schema({
     name : {
         type : String ,
+		unique: true,
         required : true
     },
 	owner: {
@@ -31,7 +32,8 @@ const objectSchema = new mongoose.Schema({
 	// TODO: Figure out if there is a better way than simply using the IDs to fetch objects everytime
 	nearbyObjects: {
     	type: [mongoose.Schema.Types.ObjectId]
-	}
+	},
+	nearest: [mongoose.Schema.Types.ObjectId]
 });
 
 const Object = mongoose.model('Object', objectSchema);
