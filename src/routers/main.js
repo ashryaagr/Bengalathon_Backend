@@ -5,3 +5,5 @@ const router = new express.Router();
 router.post('/', async (req, res)=>{
 	res.send("Welcome!!")
 });
+
+module.exports = router;

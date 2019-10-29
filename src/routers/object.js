@@ -1,16 +1,18 @@
 const express = require('express');
 const request = require('request');
 const Obj = require('../models/object');
+const fs = require("fs");
 const router = new express.Router();
 
 router.post('/objects', async (req, res)=>{
-	callFlask(req.body.image).then().catch(err=>{
+	callFlask().then().catch(err=>{
 		console.log(err)
 	})
 });
 
 // This function has to be kept synchronous
-function callFlask(image){
+function callFlask(){
+	const image = fs.readFileSync(fs.readFileSync(path.join(__dirname, "frame.jpg")));
 	const result = request.post(process.env.FLASK_URL, { image }) ;
 	var collection = [];
 	for(var i=0; i<process.env.MAX_OBJECTS; i++){
@@ -47,8 +49,7 @@ function callFlask(image){
 }
 
 function distance(o1, o2){
-	const dist = (o1.x2+o1.x4 - o2.x2+o2.x4)**2 + (o1.x1+o1.x3-o2.x1-o2.x3)**2;
-	return dist;
+	return (o1.x2 + o1.x4 - o2.x2 + o2.x4) ** 2 + (o1.x1 + o1.x3 - o2.x1 - o2.x3) ** 2;
 }
 
 module.exports = router ;

@@ -25,7 +25,8 @@
     "express": "^4.17.1",
     "firebase-functions": "^3.3.0",
     "mongodb": "^3.3.3",
-    "mongoose": "^5.7.7"
+    "mongoose": "^5.7.7",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "env-cmd": "^8.0.2",
