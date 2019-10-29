@@ -7,11 +7,6 @@ const objectSchema = new mongoose.Schema({
 		unique: true,
         required : true
     },
-	owner: {
-		type: mongoose.Schema.Types.ObjectId,
-		required: true,
-		ref: 'user',
-	},
 	// The bounding boxes have 4 coordinates, so we will store them as x1, x2, x3, x4
 	x1: {
     	type: Number,
