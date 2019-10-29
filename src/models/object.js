@@ -28,7 +28,7 @@ const objectSchema = new mongoose.Schema({
 	nearbyObjects: {
     	type: [mongoose.Schema.Types.ObjectId]
 	},
-	nearest: [mongoose.Schema.Types.ObjectId]
+	nearest: mongoose.Schema.Types.ObjectId
 });
 
 const Object = mongoose.model('Object', objectSchema);

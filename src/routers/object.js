@@ -18,7 +18,7 @@ function callFlask(){
 	for(var i=0; i<process.env.MAX_OBJECTS; i++){
 		const box = result['detection_boxes'][i];
 		const name = result['detection_class_entities'][i];
-		Obj.find({name}, function (err, o){
+		Obj.findOne({name}, function (err, o){
 			if (o===null) {
 				o = Obj.create({name, x1: box[0], x2: box[1], x3: box[2], x4: box[3]});
 			}else {
